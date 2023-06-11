@@ -129,7 +129,7 @@ public class PropietarioController : ControllerBase
 				string.IsNullOrEmpty(propietario.Apellido) ||
 				string.IsNullOrEmpty(propietario.Dni) || 
 				string.IsNullOrEmpty(propietario.Email) ||
-				propietario.Telefono == null ||
+				string.IsNullOrEmpty(propietario.Telefono) ||
 				string.IsNullOrEmpty(propietario.Password)
 			) {
 				return BadRequest("Los campos no pueden estar vacíos");
@@ -139,7 +139,7 @@ public class PropietarioController : ControllerBase
 			propietarioDB.Apellido = propietario.Apellido;
 			propietarioDB.Dni = propietario.Dni;
 			propietarioDB.Email = propietario.Email;
-			propietarioDB.Telefono = (int)propietario.Telefono;
+			propietarioDB.Telefono = propietario.Telefono;
 
 			_context.Propietario.Update(propietarioDB);
 			_context.SaveChanges();

@@ -7,6 +7,6 @@ public class EditView
 	public string Nombre { get; set; } = "";
 	public string Apellido { get; set; } = "";
 	public string Email { get; set; } = "";
-	public int? Telefono { get; set; } = 0;
+	public string Telefono { get; set; } = "";
   public string Password { get; set; } = "";
 }
